@@ -11,19 +11,17 @@ import UIKit
 class CityPickerCoordinator: Coordinator {
     private let presenter: UINavigationController
     private var currLocSunRSViewController: CurrLocSunRSCoordinator?
-    private var findPlaceViewController: CityPicker?
+    private var cityPickerController: CityPicker?
     private let storage: Storage
 
-
-    init(presenter: UINavigationController,
-        storage: Storage) {
+    init(presenter: UINavigationController, storage: Storage) {
         self.presenter = presenter
         self.storage = storage
     }
 
     func start() {
-        let gmsViewController = CityPicker()
-        presenter.present(gmsViewController, animated: true, completion: nil)
-        self.findPlaceViewController = gmsViewController
+        let cityPickerController = CityPicker()
+        presenter.present(cityPickerController, animated: true, completion: nil)
+        self.cityPickerController = cityPickerController
     }
 }

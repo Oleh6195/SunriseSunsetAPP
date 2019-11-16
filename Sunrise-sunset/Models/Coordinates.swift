@@ -7,3 +7,36 @@
 //
 
 import Foundation
+import CoreLocation
+
+struct Coordinates {
+    var lat: Double
+    var lng: Double
+}
+
+extension Coordinates: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case result
+    }
+
+    enum ResultKeys: String, CodingKey {
+        case geometry
+    }
+    enum GeometryKeys: String, CodingKey {
+        case location
+    }
+
+    enum LocationKeys: String, CodingKey {
+        case lat
+        case lng
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let resultContainer = try container.nestedContainer(keyedBy: ResultKeys.self, forKey: .result)
+        let geometryContainer = try resultContainer.nestedContainer(keyedBy: GeometryKeys.self, forKey: .geometry)
+        let locationContainer = try geometryContainer.nestedContainer(keyedBy: LocationKeys.self, forKey: .location)
+        self.lat = try locationContainer.decode(Double.self, forKey: .lat)
+        self.lng = try locationContainer.decode(Double.self, forKey: .lng)
+    }
+}

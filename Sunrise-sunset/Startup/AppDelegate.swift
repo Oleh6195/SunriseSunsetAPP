@@ -7,17 +7,26 @@
 //
 
 import UIKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    private var applicationCoordinator: ApplicationCoordinator?
     var window: UIWindow?
 
+    // swiftlint:disable line_length
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // swiftlint:enable line_length
+        GMSPlacesClient.provideAPIKey("AIzaSyCd71yJXdRvRfDRYbUmf0GCkYhZ7e95ZZM")
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let applicationCoordinator = ApplicationCoordinator(window: window)
+
+        self.window = window
+        self.applicationCoordinator = applicationCoordinator
+
+        applicationCoordinator.start()
         return true
     }
 
-
 }
-
