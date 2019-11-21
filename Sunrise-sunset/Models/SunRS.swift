@@ -29,3 +29,21 @@ extension SunRS: Decodable {
         self.sunset = try result.decode(String.self, forKey: .sunset)
     }
 }
+
+extension SunRS {
+    private func UTCToLocal(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm:ss a"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let date = dateFormatter.date(from: date)
+
+        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.timeZone = TimeZone.current
+        let timeStamp = dateFormatter.string(from: date!)
+        return timeStamp
+    }
+
+    public func localizede() -> SunRS {
+        return SunRS(sunrise: UTCToLocal(date: sunrise), sunset: UTCToLocal(date: sunset))
+    }
+}

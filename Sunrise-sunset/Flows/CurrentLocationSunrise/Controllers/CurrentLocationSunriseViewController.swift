@@ -15,6 +15,7 @@ protocol CurrentLocationSunriseViewControllerDelegate: class {
 
 class CurrentLocationSunriseViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var city: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var sunriseLabel: UILabel!
     var locationManager: CLLocationManager!
@@ -27,6 +28,7 @@ class CurrentLocationSunriseViewController: UIViewController, CLLocationManagerD
     }
 
     @IBAction func searchButttonClicked(_ sender: Any) {
+        locationManager.stopUpdatingLocation()
         delegate?.searchButtonTapped()
     }
     // MARK: - Notification Center
@@ -43,15 +45,17 @@ class CurrentLocationSunriseViewController: UIViewController, CLLocationManagerD
     }
 
     @objc func locationChaged() {
-        let defaultLocation = Coordinates(lat: 0.0, lng: 0.0)
+        let defaultLocation = Coordinates(lat: 0.0, lng: 0.0, city: "")
         DataManager.shared.fetchSunrises(coordinates: Storage.shared.location ?? defaultLocation)
     }
 
     // MARK: - View Changing
     func setSunRS(sunRS: SunRS) {
+        let sunRS: SunRS = sunRS.localizede()
         DispatchQueue.main.async {
             self.sunriseLabel.text = sunRS.sunrise
             self.sunsetLabel.text = sunRS.sunset
+            self.city.text = Storage.shared.location?.city
         }
     }
 
@@ -71,7 +75,7 @@ class CurrentLocationSunriseViewController: UIViewController, CLLocationManagerD
         let userLocation: CLLocation = locations[0] as CLLocation
         let lat = Double(userLocation.coordinate.latitude)
         let lng = Double(userLocation.coordinate.longitude)
-        let coordinates: Coordinates = Coordinates(lat: lat, lng: lng)
+        let coordinates: Coordinates = Coordinates(lat: lat, lng: lng, city: "")
         DataManager.shared.fetchSunrises(coordinates: coordinates)
     }
 

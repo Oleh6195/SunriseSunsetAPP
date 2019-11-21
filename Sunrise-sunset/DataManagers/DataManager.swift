@@ -6,10 +6,10 @@
 //  Copyright © 2019 Олег. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DataManager {
-    var APIkey = "AIzaSyCd71yJXdRvRfDRYbUmf0GCkYhZ7e95ZZM"
+    var APIkey = "AIzaSyC946KOPL80LIVILtxgwp10CQbo5_S5CL0"
     public static var shared = DataManager()
     private var decoder = JSONDecoder()
 
@@ -23,11 +23,13 @@ class DataManager {
                 return
             }
             if let dataW = data, dataW.count > 0 {
-                // swiftlint:disable force_try
-                let sunRS: SunRS = try! self.decoder.decode(SunRS.self, from: dataW)
-                // swiftlint:enable force_try
-                Storage.shared.sunRS = sunRS
-                Storage.shared.syncSunRS()
+                do {
+                    let sunRS: SunRS = try self.decoder.decode(SunRS.self, from: dataW)
+                    Storage.shared.sunRS = sunRS
+                    Storage.shared.syncSunRS()
+                } catch {
+                    print("error")
+                }
             }
 
         }.resume()
@@ -36,7 +38,8 @@ class DataManager {
 
     func fetchLocation(placeId: String) {
         // swiftlint:disable line_length
-        let urlString = "https://maps.googleapis.com/maps/api/place/details/json?place_id=\(placeId)&fields=geometry&key=\(self.APIkey)"
+        let urlString = "https://maps.googleapis.com/maps/api/place/details/json?place_id=\(placeId)&fields=geometry,address_components&key=\(self.APIkey)"
+        print(urlString)
         // swiftlint:enable line_length
         let url = URL(string: urlString)!
 
@@ -46,11 +49,13 @@ class DataManager {
                 return
             }
             if let dataW = data, dataW.count > 0 {
-                // swiftlint:disable force_try
-                let location: Coordinates = try! self.decoder.decode(Coordinates.self, from: dataW)
-                // swiftlint:disable force_try
-                Storage.shared.location = location
-                Storage.shared.syncLocation()
+                do {
+                    let location: Coordinates = try self.decoder.decode(Coordinates.self, from: dataW)
+                    Storage.shared.location = location
+                    Storage.shared.syncLocation()
+                } catch {
+                    print("error")
+                }
             }
         }.resume()
     }

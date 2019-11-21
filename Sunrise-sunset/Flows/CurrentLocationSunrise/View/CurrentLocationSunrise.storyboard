@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ikk-4k-P8s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ikk-4k-P8s">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,30 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvV-uM-LdW">
-                                <rect key="frame" x="94" y="294" width="57.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCm-CQ-CrK">
-                                <rect key="frame" x="101" y="335" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zou-ad-TSt">
-                                <rect key="frame" x="259.5" y="591" width="53.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDI-Ky-njU">
-                                <rect key="frame" x="270.5" y="632" width="42.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-KZ-cw5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="35"/>
                                 <subviews>
@@ -77,24 +53,76 @@
                                     <constraint firstItem="hrI-v2-vgB" firstAttribute="centerY" secondItem="vRc-KZ-cw5" secondAttribute="centerY" id="yRV-tK-m3O"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0N8-I6-Vzh">
+                                <rect key="frame" x="10" y="413" width="100" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvV-uM-LdW">
+                                        <rect key="frame" x="21.5" y="8" width="57.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCm-CQ-CrK">
+                                        <rect key="frame" x="32" y="37" width="36" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="kvV-uM-LdW" firstAttribute="top" secondItem="0N8-I6-Vzh" secondAttribute="top" constant="8" id="1Pj-KS-fkN"/>
+                                    <constraint firstItem="kCm-CQ-CrK" firstAttribute="centerX" secondItem="0N8-I6-Vzh" secondAttribute="centerX" id="8OB-Lz-F8U"/>
+                                    <constraint firstAttribute="width" constant="100" id="BNn-HN-qsv"/>
+                                    <constraint firstAttribute="height" constant="70" id="Bhd-7N-pqK"/>
+                                    <constraint firstItem="kvV-uM-LdW" firstAttribute="centerX" secondItem="0N8-I6-Vzh" secondAttribute="centerX" id="UjW-Dt-8DV"/>
+                                    <constraint firstAttribute="bottom" secondItem="kCm-CQ-CrK" secondAttribute="bottom" constant="12" id="Y6Y-yU-qgP"/>
+                                    <constraint firstItem="kCm-CQ-CrK" firstAttribute="top" secondItem="kvV-uM-LdW" secondAttribute="bottom" constant="8" id="auD-uk-ajJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rah-zQ-i1I">
+                                <rect key="frame" x="304" y="413" width="100" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zou-ad-TSt">
+                                        <rect key="frame" x="23.5" y="8" width="53.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDI-Ky-njU">
+                                        <rect key="frame" x="29" y="37" width="42.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="RDI-Ky-njU" firstAttribute="centerX" secondItem="rah-zQ-i1I" secondAttribute="centerX" id="4qD-Y3-ZI1"/>
+                                    <constraint firstItem="zou-ad-TSt" firstAttribute="top" secondItem="rah-zQ-i1I" secondAttribute="top" constant="8" id="94m-n0-iB6"/>
+                                    <constraint firstAttribute="width" constant="100" id="FDE-u6-GrG"/>
+                                    <constraint firstAttribute="height" constant="70" id="G3Q-tp-SSY"/>
+                                    <constraint firstAttribute="bottom" secondItem="RDI-Ky-njU" secondAttribute="bottom" constant="12" id="GL9-3I-p7k"/>
+                                    <constraint firstItem="RDI-Ky-njU" firstAttribute="top" secondItem="zou-ad-TSt" secondAttribute="bottom" constant="8" id="MX7-S2-KQ7"/>
+                                    <constraint firstAttribute="width" constant="100" id="UWW-Ib-GM3"/>
+                                    <constraint firstItem="zou-ad-TSt" firstAttribute="centerX" secondItem="rah-zQ-i1I" secondAttribute="centerX" id="p4g-VI-IGD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kCm-CQ-CrK" firstAttribute="top" secondItem="kvV-uM-LdW" secondAttribute="bottom" constant="20" id="06S-Bh-As3"/>
-                            <constraint firstItem="kvV-uM-LdW" firstAttribute="leading" secondItem="UVn-pI-oLJ" secondAttribute="leading" constant="94" id="7yx-rV-ATU"/>
-                            <constraint firstItem="vRc-KZ-cw5" firstAttribute="leading" secondItem="UVn-pI-oLJ" secondAttribute="leading" id="Gjf-ik-Dgh"/>
-                            <constraint firstItem="UVn-pI-oLJ" firstAttribute="bottom" secondItem="zou-ad-TSt" secondAttribute="bottom" constant="250" id="JRb-p7-BnW"/>
-                            <constraint firstItem="UVn-pI-oLJ" firstAttribute="trailing" secondItem="zou-ad-TSt" secondAttribute="trailing" constant="101" id="RcE-WD-TfZ"/>
-                            <constraint firstItem="UVn-pI-oLJ" firstAttribute="trailing" secondItem="RDI-Ky-njU" secondAttribute="trailing" constant="101" id="U2P-Y1-spz"/>
+                            <constraint firstItem="vRc-KZ-cw5" firstAttribute="centerX" secondItem="Er4-8y-W4T" secondAttribute="centerX" id="7uJ-WU-q9M"/>
+                            <constraint firstItem="0N8-I6-Vzh" firstAttribute="centerY" secondItem="Er4-8y-W4T" secondAttribute="centerY" id="Cyy-Pg-woq"/>
                             <constraint firstItem="vRc-KZ-cw5" firstAttribute="top" secondItem="UVn-pI-oLJ" secondAttribute="top" id="Vs1-kQ-a93"/>
-                            <constraint firstItem="kCm-CQ-CrK" firstAttribute="leading" secondItem="UVn-pI-oLJ" secondAttribute="leading" constant="101" id="WHh-ec-I9W"/>
-                            <constraint firstItem="RDI-Ky-njU" firstAttribute="top" secondItem="zou-ad-TSt" secondAttribute="bottom" constant="20" id="jf8-zx-zHf"/>
+                            <constraint firstItem="rah-zQ-i1I" firstAttribute="centerY" secondItem="Er4-8y-W4T" secondAttribute="centerY" id="h0N-1Y-BiY"/>
+                            <constraint firstItem="0N8-I6-Vzh" firstAttribute="leading" secondItem="UVn-pI-oLJ" secondAttribute="leading" constant="10" id="iyj-Tf-2FO"/>
                             <constraint firstItem="UVn-pI-oLJ" firstAttribute="trailing" secondItem="vRc-KZ-cw5" secondAttribute="trailing" id="mDh-Fc-tn2"/>
-                            <constraint firstItem="kvV-uM-LdW" firstAttribute="top" secondItem="UVn-pI-oLJ" secondAttribute="top" constant="250" id="usj-ED-P2H"/>
+                            <constraint firstItem="UVn-pI-oLJ" firstAttribute="trailing" secondItem="rah-zQ-i1I" secondAttribute="trailing" constant="10" id="vqb-J2-SWM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UVn-pI-oLJ"/>
                     </view>
                     <connections>
+                        <outlet property="city" destination="CtQ-Kl-Vzb" id="UXp-lG-QWi"/>
                         <outlet property="sunriseLabel" destination="kCm-CQ-CrK" id="zri-IO-IvA"/>
                         <outlet property="sunsetLabel" destination="RDI-Ky-njU" id="JNo-Cj-osP"/>
                     </connections>

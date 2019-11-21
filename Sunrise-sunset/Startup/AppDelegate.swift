@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // swiftlint:disable line_length
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // swiftlint:enable line_length
-        GMSPlacesClient.provideAPIKey("AIzaSyCd71yJXdRvRfDRYbUmf0GCkYhZ7e95ZZM")
+        GMSPlacesClient.provideAPIKey("AIzaSyC946KOPL80LIVILtxgwp10CQbo5_S5CL0")
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         let applicationCoordinator = ApplicationCoordinator(window: window)

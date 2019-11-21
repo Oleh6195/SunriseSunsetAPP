@@ -12,6 +12,12 @@ import CoreLocation
 struct Coordinates {
     var lat: Double
     var lng: Double
+    var city: String
+}
+struct Address: Decodable {
+    // swiftlint:disable identifier_name
+    var short_name: String
+    var long_name: String
 }
 
 extension Coordinates: Decodable {
@@ -21,6 +27,8 @@ extension Coordinates: Decodable {
 
     enum ResultKeys: String, CodingKey {
         case geometry
+        case address_components
+         // swiftlint:enable identifier_name
     }
     enum GeometryKeys: String, CodingKey {
         case location
@@ -38,5 +46,7 @@ extension Coordinates: Decodable {
         let locationContainer = try geometryContainer.nestedContainer(keyedBy: LocationKeys.self, forKey: .location)
         self.lat = try locationContainer.decode(Double.self, forKey: .lat)
         self.lng = try locationContainer.decode(Double.self, forKey: .lng)
+        let address = try resultContainer.decode([Address].self, forKey: .address_components)
+        self.city = address[0].short_name
     }
 }

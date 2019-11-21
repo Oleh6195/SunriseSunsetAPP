@@ -15,6 +15,7 @@
 		7C0BAC1A237C2F810003928D /* CurrentLocationSunrise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0BAC19237C2F810003928D /* CurrentLocationSunrise.storyboard */; };
 		7C0BAC1E237C36A10003928D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0BAC1D237C36A10003928D /* DataManager.swift */; };
 		7C0BAC20237C374F0003928D /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0BAC1F237C374F0003928D /* Coordinates.swift */; };
+		7C533B1D23869FE500DD3D27 /* Error+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C533B1C23869FE500DD3D27 /* Error+extension.swift */; };
 		7C939A69237E8C8700FB03F5 /* CityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C939A68237E8C8700FB03F5 /* CityPicker.swift */; };
 		7C939A6B237E9B7F00FB03F5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C939A6A237E9B7F00FB03F5 /* Storage.swift */; };
 		7C939A6F237EAF1A00FB03F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C939A6E237EAF1A00FB03F5 /* Coordinator.swift */; };
@@ -36,6 +37,7 @@
 		7C0BAC19237C2F810003928D /* CurrentLocationSunrise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentLocationSunrise.storyboard; sourceTree = "<group>"; };
 		7C0BAC1D237C36A10003928D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		7C0BAC1F237C374F0003928D /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		7C533B1C23869FE500DD3D27 /* Error+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+extension.swift"; sourceTree = "<group>"; };
 		7C939A68237E8C8700FB03F5 /* CityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPicker.swift; sourceTree = "<group>"; };
 		7C939A6A237E9B7F00FB03F5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		7C939A6E237EAF1A00FB03F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		7C0BABEF237C1EA60003928D /* Sunrise-sunset */ = {
 			isa = PBXGroup;
 			children = (
+				7C533B1B23869F9800DD3D27 /* Extensions */,
 				7C939A65237E89B000FB03F5 /* Startup */,
 				7C0BAC1C237C2FBE0003928D /* Coordinators */,
 				7C0BAC1B237C2FA90003928D /* DataManagers */,
@@ -159,6 +162,14 @@
 				7C939A78237FFFC700FB03F5 /* ApplicationCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		7C533B1B23869F9800DD3D27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C533B1C23869FE500DD3D27 /* Error+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7C939A65237E89B000FB03F5 /* Startup */ = {
@@ -354,6 +365,7 @@
 				7C0BAC20237C374F0003928D /* Coordinates.swift in Sources */,
 				7C0BAC13237C2ED70003928D /* CurrentLocationSunriseViewController.swift in Sources */,
 				7C0BABF1237C1EA60003928D /* AppDelegate.swift in Sources */,
+				7C533B1D23869FE500DD3D27 /* Error+extension.swift in Sources */,
 				7C939A79237FFFC700FB03F5 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
