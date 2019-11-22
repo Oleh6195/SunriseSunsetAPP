@@ -9,19 +9,19 @@
 import Foundation
 
 class Storage {
-    public static var shared = Storage()
+  public static var shared = Storage()
 
-    var sunRS: SunRS?
-    var location: Coordinates?
+  var sunRS: SunRS?
+  var location: Coordinates?
 
-    func syncSunRS() {
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "syncSunRS")))
-        }
+  func syncSunRS() {
+    DispatchQueue.main.async {
+      NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "syncSunRS")))
     }
-    func syncLocation() {
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "syncLocation")))
-        }
+  }
+  func syncLocation() {
+    DispatchQueue.main.async {
+      NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "syncLocation")))
     }
+  }
 }

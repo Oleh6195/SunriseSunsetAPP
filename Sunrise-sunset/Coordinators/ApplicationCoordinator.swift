@@ -9,22 +9,22 @@
 import UIKit
 
 class ApplicationCoordinator: Coordinator {
-    let storage: Storage
-    let window: UIWindow
-    let rootViewController: UINavigationController
-    let currLocSunrsCoordinator: CurrLocSunRSCoordinator
+  let storage: Storage
+  let window: UIWindow
+  let rootViewController: UINavigationController
+  let currLocSunrsCoordinator: CurrLocSunRSCoordinator
 
-    init(window: UIWindow) {
-        self.window = window
-        storage = Storage.shared
-        rootViewController = UINavigationController()
-        rootViewController.navigationBar.isHidden = true
-        currLocSunrsCoordinator = CurrLocSunRSCoordinator(presenter: rootViewController, storage: storage)
-    }
+  init(window: UIWindow) {
+    self.window = window
+    storage = Storage.shared
+    rootViewController = UINavigationController()
+    rootViewController.navigationBar.isHidden = true
+    currLocSunrsCoordinator = CurrLocSunRSCoordinator(presenter: rootViewController, storage: storage)
+  }
 
-    func start() { // 6
-        window.rootViewController = rootViewController
-        currLocSunrsCoordinator.start()
-        window.makeKeyAndVisible()
-    }
+  func start() {
+    window.rootViewController = rootViewController
+    currLocSunrsCoordinator.start()
+    window.makeKeyAndVisible()
+  }
 }

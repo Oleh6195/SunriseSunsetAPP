@@ -11,41 +11,40 @@ import GooglePlaces
 
 class CityPicker: GMSAutocompleteViewController, GMSAutocompleteViewControllerDelegate {
 
-    private var cityPickerCoordinator: CityPickerCoordinator?
+  private var cityPickerCoordinator: CityPickerCoordinator?
 
-    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        if let placeId = place.placeID {
-            DataManager.shared.fetchLocation(placeId: placeId)
-        }
-        dismiss(animated: true, completion: nil)
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+    if let placeId = place.placeID {
+      DataManager.shared.fetchLocation(from: placeId)
     }
+    dismiss(animated: true, completion: nil)
+  }
 
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("Error: ", error.localizedDescription)
-    }
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    print("Error: ", error.localizedDescription)
+  }
 
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-      dismiss(animated: true, completion: nil)
-    }
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
 
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-      UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
+  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+  }
 
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-      UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
+  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.delegate = self
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-          UInt(GMSPlaceField.placeID.rawValue))!
-        self.placeFields = fields
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    delegate = self
+    let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+        UInt(GMSPlaceField.placeID.rawValue))!
+    placeFields = fields
 
-        // Specify a filter.
-        let filter = GMSAutocompleteFilter()
-        filter.type = .region
-        self.autocompleteFilter = filter
-    }
+    let filter = GMSAutocompleteFilter()
+    filter.type = .region
+    autocompleteFilter = filter
+  }
 }

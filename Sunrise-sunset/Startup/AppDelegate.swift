@@ -11,22 +11,22 @@ import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    private var applicationCoordinator: ApplicationCoordinator?
-    var window: UIWindow?
+  private var applicationCoordinator: ApplicationCoordinator?
+  var window: UIWindow?
 
-    // swiftlint:disable line_length
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // swiftlint:enable line_length
-        GMSPlacesClient.provideAPIKey("AIzaSyC946KOPL80LIVILtxgwp10CQbo5_S5CL0")
+  // swiftlint:disable line_length
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // swiftlint:enable line_length
+    GMSPlacesClient.provideAPIKey(APIKeys.google)
 
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let applicationCoordinator = ApplicationCoordinator(window: window)
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    let applicationCoordinator = ApplicationCoordinator(window: window)
 
-        self.window = window
-        self.applicationCoordinator = applicationCoordinator
+    self.window = window
+    self.applicationCoordinator = applicationCoordinator
 
-        applicationCoordinator.start()
-        return true
-    }
+    applicationCoordinator.start()
+    return true
+  }
 
 }

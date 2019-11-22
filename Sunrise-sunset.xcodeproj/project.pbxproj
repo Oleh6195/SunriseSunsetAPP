@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0B74E42388231000889C0E /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B74E32388231000889C0E /* ApiKeys.swift */; };
 		7C0BABF1237C1EA60003928D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0BABF0237C1EA60003928D /* AppDelegate.swift */; };
 		7C0BABFA237C1EAA0003928D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0BABF9237C1EAA0003928D /* Assets.xcassets */; };
 		7C0BABFD237C1EAA0003928D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0BABFB237C1EAA0003928D /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		5AC81CB4BA0E05C24ECE94C2 /* Pods_Sunrise_sunset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sunrise_sunset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0B74E32388231000889C0E /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		7C0BABED237C1EA60003928D /* Sunrise-sunset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sunrise-sunset.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0BABF0237C1EA60003928D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C0BABF9237C1EAA0003928D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C0B74E2238822F700889C0E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7C0B74E32388231000889C0E /* ApiKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		7C0BABE4237C1EA60003928D = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		7C0BABEF237C1EA60003928D /* Sunrise-sunset */ = {
 			isa = PBXGroup;
 			children = (
+				7C0B74E2238822F700889C0E /* Constants */,
 				7C533B1B23869F9800DD3D27 /* Extensions */,
 				7C939A65237E89B000FB03F5 /* Startup */,
 				7C0BAC1C237C2FBE0003928D /* Coordinators */,
@@ -363,6 +374,7 @@
 				7C939A76237EC41800FB03F5 /* CityPickerCoordinator.swift in Sources */,
 				7C0BAC18237C2F690003928D /* SunRS.swift in Sources */,
 				7C0BAC20237C374F0003928D /* Coordinates.swift in Sources */,
+				7C0B74E42388231000889C0E /* ApiKeys.swift in Sources */,
 				7C0BAC13237C2ED70003928D /* CurrentLocationSunriseViewController.swift in Sources */,
 				7C0BABF1237C1EA60003928D /* AppDelegate.swift in Sources */,
 				7C533B1D23869FE500DD3D27 /* Error+extension.swift in Sources */,
